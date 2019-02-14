@@ -1,9 +1,12 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 public class FantasySchedule
 	{
+		protected static ArrayList<Team> teams = new ArrayList<Team>();
+		protected static ArrayList<Game> games = new ArrayList<Game>();
 		public static void main(String[] args)
 			{
-				ArrayList<Team> teams = new ArrayList<Team>();
+				
 				teams.add(new Team("Hotshots", "Arizona", "Western Conference", 1, 0, 0));
 				teams.add(new Team("Stallions", "Salt Lake", "Western Conference", 0, 0, 1));
 				teams.add(new Team("Commanders", "San Antonio", "Western Conference", 1, 0, 0));
@@ -38,5 +41,8 @@ public class FantasySchedule
 						System.out.println();
 						i++;
 					}
+				System.out.println();
+				
+				Game.addNewGame();
 			}
 	}
