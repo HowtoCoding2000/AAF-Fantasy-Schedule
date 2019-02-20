@@ -43,9 +43,10 @@ public class Game
 			int userAwayChoice = userInput.nextInt() - 1;
 			awayTeam = FantasySchedule.teams.get(userAwayChoice);
 			FantasySchedule.games.add(new Game(FantasySchedule.games.size() + 1,homeTeam, awayTeam));
-			System.out.print(FantasySchedule.games.get(FantasySchedule.games.size() - 1).getWeek());
-			System.out.print(FantasySchedule.games.get(FantasySchedule.games.size() - 1).getHomeTeam());
-			System.out.print(FantasySchedule.games.get(FantasySchedule.games.size() - 1).getAwayTeam());
+			System.out.print("Week " + FantasySchedule.games.get(FantasySchedule.games.size() - 1).getWeek() + ": ");
+			System.out.print(FantasySchedule.games.get(FantasySchedule.games.size() - 1).getHomeTeam().getCity() + " " + FantasySchedule.games.get(FantasySchedule.games.size() - 1).getHomeTeam().getName() + " vs ");
+			System.out.print(FantasySchedule.games.get(FantasySchedule.games.size() - 1).getAwayTeam().getCity() + " " +  FantasySchedule.games.get(FantasySchedule.games.size() - 1).getAwayTeam().getName());
+			System.out.println();
 		}
 		public int getWeek()
 			{
