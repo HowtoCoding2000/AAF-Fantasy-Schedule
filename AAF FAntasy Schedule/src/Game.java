@@ -14,39 +14,69 @@ public class Game
 			}
 		public static void addNewGame()
 		{
-			userInput = new Scanner(System.in);
-			System.out.println("Who is the home team?");
-			int i = 0;
-			for(Team t: FantasySchedule.teams)
+			boolean addingNewGame = true;
+			do
 				{
-					System.out.println("(" + (i + 1) + ")" + FantasySchedule.teams.get(i).getName());
-					i++;
-				}
-			int userHomeChoice = userInput.nextInt() - 1;
-			homeTeam = FantasySchedule.teams.get(userHomeChoice);
-			System.out.println("Who is the away team");
-			int j = 0;
-			int k = 0;
-			for(Team t: FantasySchedule.teams)
-				{
-					if (j != userHomeChoice)
+					userInput = new Scanner(System.in);
+					int userHomeChoice = 0;
+					do
 						{
-							System.out.println("(" + (k + 1) + ")" + FantasySchedule.teams.get(j).getName());
-							j++;
-							k++;
+							System.out.println("Who is the home team?");
+							int i = 0;
+							for(Team t: FantasySchedule.teams)
+								{
+									System.out.println("(" + (i + 1) + ")" + FantasySchedule.teams.get(i).getName());
+									i++;
+								}
+							userHomeChoice = userInput.nextInt() - 1;
 						}
-					else
+					while(userHomeChoice < 0 || userHomeChoice > FantasySchedule.teams.size() - 1);
+					homeTeam = FantasySchedule.teams.get(userHomeChoice);
+					int userAwayChoice = 0;
+					System.out.println();
+					do
 						{
-							j++;
+							System.out.println("Who is the away team");
+							int j = 0;
+							int k = 0;
+							for(Team t: FantasySchedule.teams)
+								{
+									if (j != userHomeChoice)
+										{
+											System.out.println("(" + (k + 1) + ")" + FantasySchedule.teams.get(j).getName());
+											j++;
+											k++;
+										}
+									else
+										{
+											j++;
+										}
+								}
+							userAwayChoice = userInput.nextInt() - 1;
 						}
+					while(userAwayChoice < 0 || userAwayChoice > FantasySchedule.teams.size() - 1);
+					awayTeam = FantasySchedule.teams.get(userAwayChoice);
+					System.out.println();
+					FantasySchedule.games.add(new Game(FantasySchedule.games.size() + 1,homeTeam, awayTeam));
+					System.out.print("Week " + FantasySchedule.games.get(FantasySchedule.games.size() - 1).getWeek() + ": ");
+					System.out.print(FantasySchedule.games.get(FantasySchedule.games.size() - 1).getHomeTeam().getCity() + " " + FantasySchedule.games.get(FantasySchedule.games.size() - 1).getHomeTeam().getName() + " vs ");
+					System.out.print(FantasySchedule.games.get(FantasySchedule.games.size() - 1).getAwayTeam().getCity() + " " +  FantasySchedule.games.get(FantasySchedule.games.size() - 1).getAwayTeam().getName());
+					System.out.println();
+					int userChoice = 0;
+					do
+						{
+							System.out.println("Would you like to add another game?");
+							System.out.println("(1) Yes");
+							System.out.println("(2) No (Return to main menu)");
+							userChoice = userInput.nextInt();
+							if (userChoice == 2)
+								{
+									addingNewGame = false;
+								}
+						}
+					while (userChoice != 1 && userChoice != 2);
 				}
-			int userAwayChoice = userInput.nextInt() - 1;
-			awayTeam = FantasySchedule.teams.get(userAwayChoice);
-			FantasySchedule.games.add(new Game(FantasySchedule.games.size() + 1,homeTeam, awayTeam));
-			System.out.print("Week " + FantasySchedule.games.get(FantasySchedule.games.size() - 1).getWeek() + ": ");
-			System.out.print(FantasySchedule.games.get(FantasySchedule.games.size() - 1).getHomeTeam().getCity() + " " + FantasySchedule.games.get(FantasySchedule.games.size() - 1).getHomeTeam().getName() + " vs ");
-			System.out.print(FantasySchedule.games.get(FantasySchedule.games.size() - 1).getAwayTeam().getCity() + " " +  FantasySchedule.games.get(FantasySchedule.games.size() - 1).getAwayTeam().getName());
-			System.out.println();
+			while (addingNewGame);
 		}
 		public int getWeek()
 			{
