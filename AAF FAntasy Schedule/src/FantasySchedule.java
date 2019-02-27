@@ -44,5 +44,6 @@ public class FantasySchedule
 				System.out.println();
 				
 				Game.addNewGame();
+				Game.printGameSchedule();
 			}
 	}
