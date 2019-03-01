@@ -69,8 +69,14 @@ public class Game
 							awayTeam = FantasySchedule.teams.get(userAwayChoice);
 							System.out.println();
 							FantasySchedule.games.add(new Game(FantasySchedule.games.size() + 1,homeTeam, awayTeam));
+							for (Game g : FantasySchedule.games)
+								{
+									System.out.println(g.getHomeTeam().getName());
+									
+								}
 //							System.out.println("Week" + FantasySchedule.games.size() + ":");
-//							System.out.println(homeTeam);
+//							System.out.println(homeTeam.getName());
+//							System.out.println(awayTeam.getName());
 							System.out.print("Week " + FantasySchedule.games.get(FantasySchedule.games.size() - 1).getWeek() + ": ");
 							System.out.print(FantasySchedule.games.get(FantasySchedule.games.size() - 1).getHomeTeam().getCity() + " " + FantasySchedule.games.get(FantasySchedule.games.size() - 1).getHomeTeam().getName() + " vs ");
 							System.out.print(FantasySchedule.games.get(FantasySchedule.games.size() - 1).getAwayTeam().getCity() + " " +  FantasySchedule.games.get(FantasySchedule.games.size() - 1).getAwayTeam().getName());
@@ -128,8 +134,8 @@ public class Game
 //						printGame(i);
 //						gameIndex = i;
 						System.out.print("Week " + FantasySchedule.games.get(i).getWeek() + ": ");
-						System.out.print(FantasySchedule.games.get(i).getHomeTeam().getCity() + " " + FantasySchedule.games.get(gameIndex).getHomeTeam().getName() + " vs ");
-						System.out.print(FantasySchedule.games.get(i).getAwayTeam().getCity() + " " +  FantasySchedule.games.get(gameIndex).getAwayTeam().getName());
+						System.out.print(FantasySchedule.games.get(i).getHomeTeam().getCity() + " " + FantasySchedule.games.get(i).getHomeTeam().getName() + " vs ");
+						System.out.print(FantasySchedule.games.get(i).getAwayTeam().getCity() + " " +  FantasySchedule.games.get(i).getAwayTeam().getName());
 						System.out.println();
 					}
 				System.out.println("*These are the games that are currently in the system.");

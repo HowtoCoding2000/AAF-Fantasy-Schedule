@@ -1,12 +1,12 @@
 
 public class Team
 	{
-		protected String name;
-		protected String city;
-		protected String conference;
-		protected int wins;
-		protected int ties;
-		protected int losses;
+		public String name;
+		public String city;
+		public String conference;
+		public int wins;
+		public int ties;
+		public int losses;
 		public Team(String n, String c, String co, int w, int t, int l)
 			{
 				name = n;

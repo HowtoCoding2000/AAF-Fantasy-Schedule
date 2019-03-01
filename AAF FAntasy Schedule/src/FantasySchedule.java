@@ -2,11 +2,12 @@ import java.util.ArrayList;
 import java.util.Scanner;
 public class FantasySchedule
 	{
-		protected static ArrayList<Team> teams = new ArrayList<Team>();
-		protected static ArrayList<Game> games = new ArrayList<Game>();
+		static ArrayList<Team> teams;
+		static ArrayList<Game> games;
 		public static void main(String[] args)
 			{
-				
+				teams = new ArrayList<Team>();
+				games = new ArrayList<Game>();
 				teams.add(new Team("Hotshots", "Arizona", "Western Conference", 1, 0, 0));
 				teams.add(new Team("Stallions", "Salt Lake", "Western Conference", 0, 0, 1));
 				teams.add(new Team("Commanders", "San Antonio", "Western Conference", 1, 0, 0));
