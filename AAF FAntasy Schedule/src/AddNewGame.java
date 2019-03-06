@@ -58,19 +58,20 @@ public class AddNewGame
 								while(userAwayChoice < 0 || userAwayChoice > FantasySchedule.teams.size() - 1);
 								g.setAwayTeam(FantasySchedule.teams.get(userAwayChoice));
 								System.out.println();
-								FantasySchedule.games.add(g);
-								for (Game ga : FantasySchedule.games)
-									{
-										System.out.println(ga.getHomeTeam().getName());
-										System.out.println(ga.getAwayTeam().getName());
-									}
+//								FantasySchedule.games.add(g);
+//								for (Game ga : FantasySchedule.games)
+//									{
+//										System.out.println(ga.getHomeTeam().getName());
+//										System.out.println(ga.getAwayTeam().getName());
+//									}
 //								System.out.println("Week" + FantasySchedule.games.size() + ":");
 //								System.out.println(homeTeam.getName());
 //								System.out.println(awayTeam.getName());
-								System.out.print("Week " + FantasySchedule.games.get(FantasySchedule.games.size() - 1).getWeek() + ": ");
-								System.out.print(FantasySchedule.games.get(FantasySchedule.games.size() - 1).getHomeTeam().getCity() + " " + FantasySchedule.games.get(FantasySchedule.games.size() - 1).getHomeTeam().getName() + " vs ");
-								System.out.print(FantasySchedule.games.get(FantasySchedule.games.size() - 1).getAwayTeam().getCity() + " " +  FantasySchedule.games.get(FantasySchedule.games.size() - 1).getAwayTeam().getName());
-								System.out.println();
+//								System.out.print("Week " + FantasySchedule.games.get(FantasySchedule.games.size() - 1).getWeek() + ": ");
+//								System.out.print(FantasySchedule.games.get(FantasySchedule.games.size() - 1).getHomeTeam().getCity() + " " + FantasySchedule.games.get(FantasySchedule.games.size() - 1).getHomeTeam().getName() + " vs ");
+//								System.out.print(FantasySchedule.games.get(FantasySchedule.games.size() - 1).getAwayTeam().getCity() + " " +  FantasySchedule.games.get(FantasySchedule.games.size() - 1).getAwayTeam().getName());
+//								System.out.println();
+								System.out.println("Week" + g.getWeek() + ":");
 								int counter = 0;
 								userChoice = 0;
 								do
@@ -89,6 +90,7 @@ public class AddNewGame
 										counter++;
 										if (userChoice == 1)
 											{
+												FantasySchedule.games.add(g);
 												correctGameInfo = true;
 											}
 										else if (userChoice == 2)
