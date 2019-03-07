@@ -6,10 +6,10 @@ public class AddNewGame
 		public static int gameIndex = 0;
 		public static void addNewGame()
 			{
-				Game g = new Game(0, null, null);
 				boolean addingNewGame = true;
 				do
 					{
+						Game g = new Game(0, null, null);
 						Scanner userInput = new Scanner(System.in);
 						boolean correctGameInfo = false;
 						do
@@ -71,7 +71,10 @@ public class AddNewGame
 //								System.out.print(FantasySchedule.games.get(FantasySchedule.games.size() - 1).getHomeTeam().getCity() + " " + FantasySchedule.games.get(FantasySchedule.games.size() - 1).getHomeTeam().getName() + " vs ");
 //								System.out.print(FantasySchedule.games.get(FantasySchedule.games.size() - 1).getAwayTeam().getCity() + " " +  FantasySchedule.games.get(FantasySchedule.games.size() - 1).getAwayTeam().getName());
 //								System.out.println();
-								System.out.println("Week" + g.getWeek() + ":");
+								System.out.print("Week " + g.getWeek() + ": ");
+								System.out.print(g.getHomeTeam().getCity() + " " + g.getHomeTeam().getName() + " vs ");
+								System.out.print(g.getAwayTeam().getCity() + " " + g.getAwayTeam().getName());
+								System.out.println();
 								int counter = 0;
 								userChoice = 0;
 								do
@@ -92,6 +95,8 @@ public class AddNewGame
 											{
 												FantasySchedule.games.add(g);
 												correctGameInfo = true;
+												System.out.println();
+												printGameSchedule();
 											}
 										else if (userChoice == 2)
 											{
