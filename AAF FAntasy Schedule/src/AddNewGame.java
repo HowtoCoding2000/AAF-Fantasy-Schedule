@@ -118,6 +118,7 @@ public class AddNewGame
 									{
 										addingNewGame = false;
 									}
+								System.out.println();
 							}
 						while (userChoice != 1 && userChoice != 2);
 					}
