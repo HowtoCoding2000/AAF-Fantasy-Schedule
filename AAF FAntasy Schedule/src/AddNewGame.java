@@ -9,7 +9,7 @@ public class AddNewGame
 				boolean addingNewGame = true;
 				do
 					{
-						Game g = new Game(0, null, null);
+						Game g = new Game(0, null, null, false, false);
 						Scanner userInput = new Scanner(System.in);
 						boolean correctGameInfo = false;
 						do
@@ -77,10 +77,10 @@ public class AddNewGame
 												System.out.println();
 //												printGameSchedule();
 											}
-										else if (userChoice == 2)
-											{
-												FantasySchedule.games.remove(FantasySchedule.games.get(FantasySchedule.games.size() - 1));
-											}
+//										else if (userChoice == 2)
+//											{
+//												FantasySchedule.games.remove(FantasySchedule.games.get(FantasySchedule.games.size() - 1));
+//											}
 										System.out.println();
 									}
 								while(userChoice != 1 && userChoice != 2);
@@ -106,13 +106,20 @@ public class AddNewGame
 			
 			public static void printGameSchedule()
 				{
-					for (int i = 0; i < FantasySchedule.games.size(); i++)
+					if(FantasySchedule.games.size() > 0)
 						{
-							System.out.print("Week " + FantasySchedule.games.get(i).getWeek() + ": ");
-							System.out.print(FantasySchedule.games.get(i).getHomeTeam().getCity() + " " + FantasySchedule.games.get(i).getHomeTeam().getName() + " vs ");
-							System.out.print(FantasySchedule.games.get(i).getAwayTeam().getCity() + " " +  FantasySchedule.games.get(i).getAwayTeam().getName());
-							System.out.println();
+							for (int i = 0; i < FantasySchedule.games.size(); i++)
+								{
+									System.out.print("Week " + FantasySchedule.games.get(i).getWeek() + ": ");
+									System.out.print(FantasySchedule.games.get(i).getHomeTeam().getCity() + " " + FantasySchedule.games.get(i).getHomeTeam().getName() + " vs ");
+									System.out.print(FantasySchedule.games.get(i).getAwayTeam().getCity() + " " +  FantasySchedule.games.get(i).getAwayTeam().getName());
+									System.out.println();
+								}
+							System.out.println("*These are the games that are currently in the system.");
 						}
-					System.out.println("*These are the games that are currently in the system.");
+					else
+						{
+							System.out.println("There are currently " + FantasySchedule.games.size() + " games in the system.");
+						}
 				}
 	}

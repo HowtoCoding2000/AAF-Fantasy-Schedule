@@ -6,12 +6,15 @@ public class Game
 		public int week;
 		public Team homeTeam;
 		public Team awayTeam;
-		
-		public Game(int w, Team h, Team a)
+		public boolean winnerPredicted;
+		public boolean homeTeamPredicted;
+		public Game(int w, Team h, Team a, boolean p, boolean hP)
 			{
 				week = w;
 				homeTeam = h;
 				awayTeam = a;
+				winnerPredicted = p;
+				homeTeamPredicted = hP;
 			}
 		public int getWeek()
 			{
@@ -37,5 +40,22 @@ public class Game
 			{
 				this.awayTeam = awayTeam;
 			}
+		public boolean isWinnerPredicted()
+			{
+				return winnerPredicted;
+			}
+		public void setWinnerPredicted(boolean winnerPredicted)
+			{
+				this.winnerPredicted = winnerPredicted;
+			}
+		public boolean isHomeTeamPredicted()
+			{
+				return homeTeamPredicted;
+			}
+		public void setHomeTeamPredicted(boolean homeTeamPredicted)
+			{
+				this.homeTeamPredicted = homeTeamPredicted;
+			}
+		
 	}
 

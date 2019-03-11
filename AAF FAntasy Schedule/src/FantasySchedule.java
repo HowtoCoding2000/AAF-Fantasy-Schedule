@@ -4,8 +4,10 @@ public class FantasySchedule
 	{
 		static ArrayList<Team> teams;
 		static ArrayList<Game> games;
+		static int userMenuChoice = 0;
 		public static void main(String[] args)
 			{
+				Scanner userMenuInput = new Scanner(System.in);
 				teams = new ArrayList<Team>();
 				games = new ArrayList<Game>();
 				teams.add(new Team("Hotshots", "Arizona", "Western Conference", 1, 0, 0));
@@ -16,6 +18,31 @@ public class FantasySchedule
 				teams.add(new Team("Iron", "Birmingham", "Eastern Conference", 1, 0, 0));
 				teams.add(new Team("Express", "Memphis", "Eastern Conference", 0, 0, 1));
 				teams.add(new Team("Apollos", "Orlando", "Eastern Conference", 1, 0, 0));
+				
+				printTeams();
+				do
+					{
+						System.out.println("What would you like to do?");
+						System.out.println("(1) Add a new game");
+						System.out.println("(2) Print the game schedule");
+						System.out.println("(3) Predict the winner of a game");
+						userMenuChoice = userMenuInput.nextInt();
+						if(userMenuChoice == 1)
+							{
+								System.out.println();
+								AddNewGame.addNewGame();
+							}
+						else if(userMenuChoice == 2)
+							{
+								System.out.println();
+								AddNewGame.printGameSchedule();
+							}
+					}
+				while(userMenuChoice < 1 && userMenuChoice > 2);
+				
+			}
+		public static void printTeams()
+			{
 				int i = 0;
 				boolean conference2Used = false;
 				for (Team t : teams)
@@ -43,8 +70,5 @@ public class FantasySchedule
 						i++;
 					}
 				System.out.println();
-				
-				AddNewGame.addNewGame();
-				AddNewGame.printGameSchedule();
 			}
 	}
