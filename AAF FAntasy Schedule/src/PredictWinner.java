@@ -4,7 +4,7 @@ public class PredictWinner
 		public static void predictWinner()
 			{
 				Scanner userInput = new Scanner(System.in);
-				int userChoice = 0;
+				int gamePlayedChoice = 0;
 				int userWeekChoice = 0;
 				boolean predictingWinner = true;
 				do
@@ -28,10 +28,10 @@ public class PredictWinner
 										System.out.println("Has this game been played?");
 										System.out.println("(1) Yes");
 										System.out.println("(2) No");
-										userChoice = userInput.nextInt();
+										gamePlayedChoice = userInput.nextInt();
 									}
-								while (userChoice < 1 && userChoice > 2);
-								userChoice = 0;
+								while (gamePlayedChoice < 1 && gamePlayedChoice > 2);
+								gamePlayedChoice = 0;
 								if(userWeekChoice == 1)
 									{
 										System.out.println("You cannot predict the winner of a game that has already been played.");
@@ -45,9 +45,9 @@ public class PredictWinner
 										System.out.println("Which team do you predict will win?");
 										System.out.println("(1) " + FantasySchedule.games.get(userWeekChoice).getHomeTeam().getCity() + " " + FantasySchedule.games.get(userWeekChoice).getHomeTeam().getName());
 										System.out.println("(2) " + FantasySchedule.games.get(userWeekChoice).getAwayTeam().getCity() + " " +  FantasySchedule.games.get(userWeekChoice).getAwayTeam().getName());
+										gamePlayedChoice = userInput.nextInt();
 										System.out.println();
-										userChoice = userInput.nextInt();
-										if(userChoice == 1)
+										if(gamePlayedChoice == 1)
 											{
 												FantasySchedule.games.get(userWeekChoice).setWinnerPredicted(true);
 												FantasySchedule.games.get(userWeekChoice).setHomeTeamPredicted(true);

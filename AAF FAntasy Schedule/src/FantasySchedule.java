@@ -4,6 +4,7 @@ public class FantasySchedule
 	{
 		static ArrayList<Team> teams;
 		static ArrayList<Game> games;
+		static ArrayList<games> weeks;
 		static int userMenuChoice = 0;
 		static boolean stillRunning = true;
 		public static void main(String[] args)
@@ -11,6 +12,7 @@ public class FantasySchedule
 				Scanner userMenuInput = new Scanner(System.in);
 				teams = new ArrayList<Team>();
 				games = new ArrayList<Game>();
+				weeks = new ArrayList<games>();
 				teams.add(new Team("Hotshots", "Arizona", "Western Conference", 1, 0, 0));
 				teams.add(new Team("Stallions", "Salt Lake", "Western Conference", 0, 0, 1));
 				teams.add(new Team("Commanders", "San Antonio", "Western Conference", 1, 0, 0));
