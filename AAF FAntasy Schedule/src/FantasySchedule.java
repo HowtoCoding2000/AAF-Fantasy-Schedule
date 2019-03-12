@@ -5,6 +5,7 @@ public class FantasySchedule
 		static ArrayList<Team> teams;
 		static ArrayList<Game> games;
 		static int userMenuChoice = 0;
+		static boolean stillRunning = true;
 		public static void main(String[] args)
 			{
 				Scanner userMenuInput = new Scanner(System.in);
@@ -22,24 +23,33 @@ public class FantasySchedule
 				printTeams();
 				do
 					{
-						System.out.println("What would you like to do?");
-						System.out.println("(1) Add a new game");
-						System.out.println("(2) Print the game schedule");
-						System.out.println("(3) Predict the winner of a game");
-						userMenuChoice = userMenuInput.nextInt();
-						if(userMenuChoice == 1)
+						do
 							{
-								System.out.println();
-								AddNewGame.addNewGame();
+								System.out.println("What would you like to do?");
+								System.out.println("(1) Add a new game");
+								System.out.println("(2) Print the game schedule");
+								System.out.println("(3) Predict the winner of a game");
+								userMenuChoice = userMenuInput.nextInt();
+								if(userMenuChoice == 1)
+									{
+										System.out.println();
+										AddNewGame.addNewGame();
+									}
+								else if(userMenuChoice == 2)
+									{
+										System.out.println();
+										AddNewGame.printGameSchedule();
+										System.out.println();
+									}
+								else if(userMenuChoice == 3)
+									{
+										System.out.println();
+										PredictWinner.predictWinner();
+									}
 							}
-						else if(userMenuChoice == 2)
-							{
-								System.out.println();
-								AddNewGame.printGameSchedule();
-							}
+						while(userMenuChoice < 1 && userMenuChoice > 3);
 					}
-				while(userMenuChoice < 1 && userMenuChoice > 2);
-				
+					while(stillRunning);
 			}
 		public static void printTeams()
 			{

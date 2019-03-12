@@ -111,8 +111,23 @@ public class AddNewGame
 							for (int i = 0; i < FantasySchedule.games.size(); i++)
 								{
 									System.out.print("Week " + FantasySchedule.games.get(i).getWeek() + ": ");
-									System.out.print(FantasySchedule.games.get(i).getHomeTeam().getCity() + " " + FantasySchedule.games.get(i).getHomeTeam().getName() + " vs ");
+									System.out.print(FantasySchedule.games.get(i).getHomeTeam().getCity() + " " + FantasySchedule.games.get(i).getHomeTeam().getName());
+									if(FantasySchedule.games.get(i).isWinnerPredicted())
+										{
+											if(FantasySchedule.games.get(i).isHomeTeamPredicted())
+												{
+													System.out.print( " (Predicted Winner)");
+												}
+										}
+									System.out.print(" vs ");
 									System.out.print(FantasySchedule.games.get(i).getAwayTeam().getCity() + " " +  FantasySchedule.games.get(i).getAwayTeam().getName());
+									if(FantasySchedule.games.get(i).isWinnerPredicted())
+										{
+											if(!FantasySchedule.games.get(i).isHomeTeamPredicted())
+												{
+													System.out.print( " (Predicted Winner)");
+												}
+										}
 									System.out.println();
 								}
 							System.out.println("*These are the games that are currently in the system.");
