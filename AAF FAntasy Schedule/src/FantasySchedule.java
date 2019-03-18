@@ -4,7 +4,7 @@ public class FantasySchedule
 	{
 		static ArrayList<Team> teams;
 		static ArrayList<Game> games;
-		static ArrayList<games> weeks;
+		static ArrayList<ArrayList<Game>> weeks;
 		static int userMenuChoice = 0;
 		static boolean stillRunning = true;
 		public static void main(String[] args)
@@ -12,16 +12,28 @@ public class FantasySchedule
 				Scanner userMenuInput = new Scanner(System.in);
 				teams = new ArrayList<Team>();
 				games = new ArrayList<Game>();
-				weeks = new ArrayList<games>();
+				weeks = new ArrayList<ArrayList<Game>>();
+				//0
 				teams.add(new Team("Hotshots", "Arizona", "Western Conference", 1, 0, 0));
+				//1
 				teams.add(new Team("Stallions", "Salt Lake", "Western Conference", 0, 0, 1));
+				//2
 				teams.add(new Team("Commanders", "San Antonio", "Western Conference", 1, 0, 0));
+				//3
 				teams.add(new Team("Fleet", "San Diego", "Western Conference", 0, 0, 1));
+				//4
 				teams.add(new Team("Legends", "Atlanta", "Eastern Conference", 0, 0, 1));
+				//5
 				teams.add(new Team("Iron", "Birmingham", "Eastern Conference", 1, 0, 0));
+				//6
 				teams.add(new Team("Express", "Memphis", "Eastern Conference", 0, 0, 1));
+				//7
 				teams.add(new Team("Apollos", "Orlando", "Eastern Conference", 1, 0, 0));
-				
+				games.add(new Game(1, teams.get(3), teams.get(2), false, false));
+				games.add(new Game(1, teams.get(4), teams.get(7), false, false));
+				games.add(new Game(1, teams.get(6), teams.get(5), false, false));
+				games.add(new Game(1, teams.get(1), teams.get(0), false, false));
+				weeks.add(games.get(0));
 				printTeams();
 				do
 					{
