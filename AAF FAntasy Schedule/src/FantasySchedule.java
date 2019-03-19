@@ -33,7 +33,7 @@ public class FantasySchedule
 				games.add(new Game(1, teams.get(4), teams.get(7), false, false));
 				games.add(new Game(1, teams.get(6), teams.get(5), false, false));
 				games.add(new Game(1, teams.get(1), teams.get(0), false, false));
-				weeks.add(games.get(0));
+				weeks.add(games);
 				printTeams();
 				do
 					{

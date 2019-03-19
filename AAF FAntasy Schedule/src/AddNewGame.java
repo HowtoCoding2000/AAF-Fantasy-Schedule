@@ -4,6 +4,7 @@ public class AddNewGame
 	{
 		public static int userChoice = 0;
 		public static int gameIndex = 0;
+		public static int week = 1;
 		public static void addNewGame()
 			{
 				boolean addingNewGame = true;
@@ -15,7 +16,11 @@ public class AddNewGame
 						do
 							{
 								int userHomeChoice = 0;
-								g.setWeek(FantasySchedule.games.size() + 1);
+								if(FantasySchedule.games.size() % 4 == 0)
+									{
+										week++;
+									}
+								g.setWeek(week);
 								do
 									{
 										System.out.println("Who is the home team?");
