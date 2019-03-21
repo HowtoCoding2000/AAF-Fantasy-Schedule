@@ -20,10 +20,10 @@ public class PredictWinner
 								System.out.println("Enter the number of the week you would like to predict a game winner for.");
 								userWeekChoice = userInput.nextInt() - 1;
 							}
-						while (userWeekChoice < 1 && userWeekChoice > AddNewGame.week);
+						while (userWeekChoice < 0 || userWeekChoice > AddNewGame.week - 1);
 						do
 							{
-								int counter = 0;
+								int counter = 1;
 								System.out.println("Enter the number of the game you would like to predict the winner for.");
 								for(int i = 0; i < FantasySchedule.games.size(); i++)
 									{
@@ -36,7 +36,7 @@ public class PredictWinner
 									}
 								userGameChoice = userInput.nextInt() - 1;
 							}
-						while (userGameChoice < 1 && userGameChoice + (4 * userWeekChoice) > FantasySchedule.games.size());
+						while (userGameChoice < 0 || userGameChoice + (4 * userWeekChoice) > FantasySchedule.games.size() - 1);
 						userGameChoice = userGameChoice + (4 * userWeekChoice);
 						gamePlayedChoice = 0;
 						do
@@ -46,7 +46,7 @@ public class PredictWinner
 								System.out.println("(2) No");
 								gamePlayedChoice = userInput.nextInt();
 							}
-						while (gamePlayedChoice < 1 && gamePlayedChoice > 2);
+						while (gamePlayedChoice < 1 || gamePlayedChoice > 2);
 						if(userWeekChoice == 1)
 							{
 								System.out.println("You cannot predict the winner of a game that has already been played.");
@@ -59,8 +59,8 @@ public class PredictWinner
 //								System.out.println();
 								AddNewGame.printGame(userGameChoice);
 								System.out.println("Which team do you predict will win?");
-								System.out.println("(1) " + FantasySchedule.games.get(userGameChoice).getHomeTeam().getCity() + " " + FantasySchedule.games.get(userWeekChoice).getHomeTeam().getName());
-								System.out.println("(2) " + FantasySchedule.games.get(userGameChoice).getAwayTeam().getCity() + " " +  FantasySchedule.games.get(userWeekChoice).getAwayTeam().getName());
+								System.out.println("(1) " + FantasySchedule.games.get(userGameChoice).getHomeTeam().getCity() + " " + FantasySchedule.games.get(userGameChoice).getHomeTeam().getName());
+								System.out.println("(2) " + FantasySchedule.games.get(userGameChoice).getAwayTeam().getCity() + " " +  FantasySchedule.games.get(userGameChoice).getAwayTeam().getName());
 								gamePlayedChoice = userInput.nextInt();
 								System.out.println();
 								if(gamePlayedChoice == 1)
