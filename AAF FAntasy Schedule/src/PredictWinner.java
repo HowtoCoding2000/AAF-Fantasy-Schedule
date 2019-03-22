@@ -47,9 +47,10 @@ public class PredictWinner
 								gamePlayedChoice = userInput.nextInt();
 							}
 						while (gamePlayedChoice < 1 || gamePlayedChoice > 2);
-						if(userWeekChoice == 1)
+						if(gamePlayedChoice == 1)
 							{
 								System.out.println("You cannot predict the winner of a game that has already been played.");
+								System.out.println();
 							}
 						else
 							{
