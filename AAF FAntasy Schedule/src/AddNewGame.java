@@ -111,6 +111,7 @@ public class AddNewGame
 			
 		public static void printGameSchedule()
 			{
+				int currentWeek = 0;
 				if(FantasySchedule.games.size() > 0)
 					{
 						for (int i = 0; i < FantasySchedule.games.size(); i++)
@@ -134,6 +135,11 @@ public class AddNewGame
 //											}
 //									}
 //								System.out.println();
+								if(FantasySchedule.games.get(i).getWeek() > currentWeek)
+									{
+										currentWeek++;
+										System.out.println("\nWeek " + currentWeek + ":");
+									}
 								printGame(i);
 							}
 						System.out.println("*These are the games that are currently in the system.");
@@ -145,7 +151,7 @@ public class AddNewGame
 			}
 		public static void printGame(int gameIndex)
 			{
-				System.out.print("Week " + FantasySchedule.games.get(gameIndex).getWeek() + ": ");
+//				System.out.print("Week " + FantasySchedule.games.get(gameIndex).getWeek() + ": ");
 				System.out.print(FantasySchedule.games.get(gameIndex).getHomeTeam().getCity() + " " + FantasySchedule.games.get(gameIndex).getHomeTeam().getName());
 				if(FantasySchedule.games.get(gameIndex).isWinnerPredicted())
 					{

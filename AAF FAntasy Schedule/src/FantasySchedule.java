@@ -27,12 +27,27 @@ public class FantasySchedule
 				teams.add(new Team("Express", "Memphis", "Eastern Conference", 0, 0, 1));
 				//7
 				teams.add(new Team("Apollos", "Orlando", "Eastern Conference", 1, 0, 0));
-				games.add(new Game(1, teams.get(4), teams.get(7), false, false));
-				games.add(new Game(1, teams.get(3), teams.get(2), false, false));
-				games.add(new Game(1, teams.get(6), teams.get(5), false, false));
-				games.add(new Game(1, teams.get(1), teams.get(0), false, false));
-				games.add(new Game(2, teams.get(1), teams.get(5), false, false));
-				games.add(new Game(2, teams.get(0), teams.get(6), false, false));
+				games.add(new Game(1, teams.get(2), teams.get(3), false, false));
+				games.add(new Game(1, teams.get(7), teams.get(4), false, false));
+				games.add(new Game(1, teams.get(5), teams.get(6), false, false));
+				games.add(new Game(1, teams.get(0), teams.get(1), false, false));
+				games.add(new Game(2, teams.get(5), teams.get(1), false, false));
+				games.add(new Game(2, teams.get(6), teams.get(0), false, false));
+				games.add(new Game(2, teams.get(2), teams.get(7), false, false));
+				games.add(new Game(2, teams.get(3), teams.get(4), false, false));
+				games.add(new Game(3, teams.get(1), teams.get(0), false, false));
+				games.add(new Game(3, teams.get(7), teams.get(6), false, false));
+				games.add(new Game(3, teams.get(4), teams.get(5), false, false));
+				games.add(new Game(3, teams.get(3), teams.get(2), false, false));
+				games.add(new Game(4, teams.get(6), teams.get(3), false, false));
+				games.add(new Game(4, teams.get(1), teams.get(7), false, false));
+				games.add(new Game(4, teams.get(5), teams.get(2), false, false));
+				games.add(new Game(4, teams.get(0), teams.get(4), false, false));
+				games.add(new Game(5, teams.get(7), teams.get(5), false, false));
+				games.add(new Game(5, teams.get(3), teams.get(1), false, false));
+				games.add(new Game(5, teams.get(4), teams.get(6), false, false));
+				games.add(new Game(5, teams.get(0), teams.get(2), false, false));
+				
 				printTeams();
 				do
 					{
