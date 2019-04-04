@@ -47,7 +47,26 @@ public class FantasySchedule
 				games.add(new Game(5, teams.get(3), teams.get(1), false, false));
 				games.add(new Game(5, teams.get(4), teams.get(6), false, false));
 				games.add(new Game(5, teams.get(0), teams.get(2), false, false));
-				
+				games.add(new Game(6, teams.get(1), teams.get(6), false, false));
+				games.add(new Game(6, teams.get(7), teams.get(0), false, false));
+				games.add(new Game(6, teams.get(4), teams.get(2), false, false));
+				games.add(new Game(6, teams.get(3), teams.get(5), false, false));
+				games.add(new Game(7, teams.get(4), teams.get(7), false, false));
+				games.add(new Game(7, teams.get(2), teams.get(1), false, false));
+				games.add(new Game(7, teams.get(0), teams.get(3), false, false));
+				games.add(new Game(7, teams.get(6), teams.get(5), false, false));
+				games.add(new Game(8, teams.get(6), teams.get(7), false, false));
+				games.add(new Game(8, teams.get(1), teams.get(3), false, false));
+				games.add(new Game(8, teams.get(5), teams.get(4), false, false));
+				games.add(new Game(8, teams.get(2), teams.get(0), false, false));
+				games.add(new Game(9, teams.get(2), teams.get(6), false, false));
+				games.add(new Game(9, teams.get(7), teams.get(3), false, false));
+				games.add(new Game(9, teams.get(4), teams.get(1), false, false));
+				games.add(new Game(9, teams.get(5), teams.get(0), false, false));
+				games.add(new Game(10, teams.get(1), teams.get(2), false, false));
+				games.add(new Game(10, teams.get(6), teams.get(4), false, false));
+				games.add(new Game(10, teams.get(7), teams.get(5), false, false));
+				games.add(new Game(10, teams.get(3), teams.get(0), false, false));
 				printTeams();
 				do
 					{

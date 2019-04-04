@@ -16,6 +16,7 @@ public class AddNewGame
 						do
 							{
 								int userHomeChoice = 0;
+								week = FantasySchedule.games.get(FantasySchedule.games.size() - 1).getWeek();
 								if(FantasySchedule.games.size() % 4 == 0)
 									{
 										week++;
@@ -62,8 +63,14 @@ public class AddNewGame
 									}
 								while(userAwayChoice < 0 || userAwayChoice > FantasySchedule.teams.size() - 1);
 								g.setAwayTeam(FantasySchedule.teams.get(userAwayChoice));
-								System.out.println();
-								System.out.print("Week " + g.getWeek() + ": ");
+								if(g.getWeek() > 10)
+									{
+										System.out.println("\nPlayoffs:");
+									}
+								else
+									{
+										System.out.print("\nWeek " + g.getWeek() + ": ");
+									}
 								System.out.print(g.getHomeTeam().getCity() + " " + g.getHomeTeam().getName() + " vs ");
 								System.out.print(g.getAwayTeam().getCity() + " " + g.getAwayTeam().getName());
 								System.out.println();
@@ -135,7 +142,11 @@ public class AddNewGame
 //											}
 //									}
 //								System.out.println();
-								if(FantasySchedule.games.get(i).getWeek() > currentWeek)
+								if(FantasySchedule.games.get(i).getWeek() > 10)
+									{
+										System.out.println("\nPlayoffs:");
+									}
+								else if(FantasySchedule.games.get(i).getWeek() > currentWeek)
 									{
 										currentWeek++;
 										System.out.println("\nWeek " + currentWeek + ":");
